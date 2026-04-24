@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Q1 - Do you like travelling?</title>
+<style>
+  body {
+    margin: 0;
+    padding: 2rem 1rem;
+    background: #F5F4EE;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    color: #2B2B28;
+    line-height: 1.6;
+  }
+  .page-title {
+    max-width: 780px;
+    margin: 0 auto 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2B2B28;
+  }
+  .question {
+    max-width: 780px;
+    margin: 0 auto 1.5rem;
+    font-size: 15px;
+    color: #6B6A63;
+  }
+  .feedback-card {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1.75rem;
+    background: #FAF9F5;
+    border-radius: 12px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    font-size: 15px;
+    color: #2B2B28;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+    font-size: 13px;
+    color: #6B6A63;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-red { background: #E24B4A; }
+  .dot-blue { background: #185FA5; }
+  .dot-green { background: #0F6E56; }
+  .wrong {
+    color: #E24B4A;
+    text-decoration: line-through;
+    text-decoration-color: #E24B4A;
+    font-weight: 500;
+  }
+  .better {
+    color: #185FA5;
+    font-weight: 500;
+    background: #E6F1FB;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  .add {
+    color: #0F6E56;
+    font-weight: 500;
+    background: #E1F5EE;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-style: italic;
+  }
+  .full-text {
+    line-height: 2;
+    padding: 1.1rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: 15px;
+    border: 0.5px solid rgba(0,0,0,0.06);
+  }
+  .reasons {
+    padding: 1rem 1.1rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border-left: 3px solid rgba(0,0,0,0.15);
+    border-top: 0.5px solid rgba(0,0,0,0.06);
+    border-right: 0.5px solid rgba(0,0,0,0.06);
+    border-bottom: 0.5px solid rgba(0,0,0,0.06);
+  }
+  .reason-item {
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 0.5px dashed rgba(0,0,0,0.1);
+    font-size: 13.5px;
+    color: #6B6A63;
+    line-height: 1.65;
+  }
+  .reason-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .reason-item strong {
+    color: #2B2B28;
+    font-weight: 500;
+  }
+  .reason-title {
+    display: block;
+    color: #2B2B28;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    font-size: 13px;
+  }
+  .reason-title.err::before { content: "⚠️ "; }
+  .reason-title.up::before { content: "⬆️ "; }
+  .reason-title.tip::before { content: "💎 "; }
+  .section-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B6A63;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #1A1A18;
+      color: #E5E4DF;
+    }
+    .page-title, .reason-item strong, .reason-title, .full-text, .feedback-card {
+      color: #E5E4DF;
+    }
+    .question, .section-label, .legend, .reason-item {
+      color: #9C9A92;
+    }
+    .feedback-card {
+      background: #232320;
+      border-color: rgba(255,255,255,0.08);
+    }
+    .full-text, .reasons {
+      background: #1A1A18;
+      border-color: rgba(255,255,255,0.08);
+    }
+    .reasons { border-left-color: rgba(255,255,255,0.2); }
+    .legend, .reason-item { border-color: rgba(255,255,255,0.08); }
+    .better { color: #85B7EB; background: rgba(24,95,165,0.2); }
+    .add { color: #5DCAA5; background: rgba(15,110,86,0.2); }
+    .wrong { color: #F09595; text-decoration-color: #F09595; }
+  }
+</style>
+</head>
+<body>
+<div class="page-title">Q1. Do you like travelling? Why or why not?</div>
+<div class="question">Part 1 — Travel set 1</div>
+
+<div class="feedback-card">
+  <div class="legend">
+    <span class="legend-item"><span class="dot dot-red"></span>빼거나 바꿀 부분</span>
+    <span class="legend-item"><span class="dot dot-blue"></span>Band 9 개선 버전</span>
+    <span class="legend-item"><span class="dot dot-green"></span>추가하면 좋은 내용 / 삭제 권장</span>
+  </div>
+
+  <div class="section-label">✏️ 답안 + 수정 (통합)</div>
+  <div class="full-text">
+    <span class="wrong">Well</span> <span class="better">Honestly</span>, <span class="wrong">I'm not sure</span> <span class="better">I have mixed feelings about</span> if I like traveling. <span class="add">(I mean / Because, you know — 불필요, 삭제)</span> When I was <span class="wrong">a little kid</span> <span class="better">younger</span>, I <span class="wrong">did love</span> <span class="better">absolutely loved</span> trips. All I <span class="wrong">needed</span> <span class="better">had</span> to do was just pack <span class="wrong">it</span> <span class="better">my bags</span> up and <span class="wrong">follow mom and dad</span> <span class="better">follow my parents around</span>. <span class="wrong">As I grow up, however</span> <span class="better">But as I got older</span>, I <span class="wrong">rarely travel</span> <span class="better">'ve hardly travelled at all</span>, and <span class="wrong">worse still</span>, I've <span class="wrong">never</span> <span class="better">never actually</span> planned a trip on my own. <span class="wrong">So, I'm not sure but, it occurs to me that</span> <span class="better">So I sometimes wonder if</span> <span class="wrong">if I didn't go trip for about 10 years, doesn't that mean I don't like trips</span> <span class="better">that means I don't really enjoy it anymore</span>? <span class="wrong">By the way</span> <span class="better">That said</span>, if I had enough time and money to travel <span class="wrong">all over</span> <span class="better">the</span> world, <span class="wrong">worrying about nothing</span> <span class="better">without worrying about anything</span>, I would <span class="wrong">do</span> travel <span class="wrong">all around the world</span>, <span class="wrong">readily</span> <span class="better">in a heartbeat</span>.
+  </div>
+
+  <div class="section-label">📚 수정 이유 & 배울 표현</div>
+  <div class="reasons">
+    <div class="reason-item">
+      <span class="reason-title up">Well → Honestly</span>
+      "Well"은 생각을 끄는 느낌이고, <strong>Honestly</strong>는 솔직한 의견을 시작하는 자연스러운 opener. Band 9 답변은 첫 단어부터 자신감 있게.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">I'm not sure → I have mixed feelings</span>
+      "확신이 안 선다"를 자연스럽게 표현하는 원어민식 숙어. <strong>mixed feelings</strong>가 훨씬 세련됨.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">불필요한 filler 표현 정리</span>
+      "I mean", "Because, you know", "worse still", "So, I'm not sure but" — Part 1은 <strong>간결함</strong>이 핵심. 이런 말 버릇은 점수 깎임.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">a little kid → younger</span>
+      <strong>형용사 앞엔 관사 X</strong>. "when I was younger"가 자연스러움 ("when I was a kid"는 OK).
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">did love → absolutely loved</span>
+      강조할 땐 <strong>강조 부사</strong>를 붙이는 게 훨씬 자연스러움. 비슷한 패턴: totally agreed, completely forgot, really enjoyed.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">needed → had</span>
+      "~하기만 하면 됐다"는 <strong>all I had to do</strong>가 훨씬 자연스러움. needed는 "필요했다"에 가까움.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">pack it up → pack my bags up</span>
+      "it"이 가리키는 대상이 불명확. <strong>pack my bags</strong>가 관용 표현.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">follow mom and dad → follow my parents around</span>
+      <strong>follow + around</strong> = "졸졸 따라다니다" 느낌의 phrasal verb. 단순 follow보다 어린이다운 그림이 그려짐.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">As I grow up → As I got older (+ however → But)</span>
+      과거→현재 변화는 <strong>과거시제</strong>로. "grow up"은 현재형이라 어색. 또 "however" 대신 <strong>But</strong>으로 시작하면 자연스러움.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">rarely travel → have hardly travelled at all</span>
+      <strong>at all</strong>을 붙이면 "전혀" 강조. rarely보다 훨씬 원어민스러움. 비슷한 패턴: not at all, nothing at all.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">never → never actually</span>
+      <strong>actually</strong>를 넣으면 "사실상 한 번도 ~해본 적 없다"는 강조 뉘앙스. Band 9 단골 표현.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">it occurs to me → sometimes wonder if</span>
+      "가끔 ~인지 궁금하다" — <strong>sometimes wonder if</strong>가 훨씬 일상적이고 유연함.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">if I didn't go trip → if I haven't gone on a trip</span>
+      지속된 경험은 <strong>현재완료</strong>로. 또 "go trip"이 아니라 <strong>go on a trip</strong>이 관용구.
+      <br><br>💡 더 나아가 모범답안에선 이 부분 자체를 간결하게 <strong>"that means I don't really enjoy it anymore"</strong>로 정리했어요. really + anymore 조합이 "예전과 달리 지금은 별로"라는 뉘앙스를 부드럽게 표현.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">By the way → That said</span>
+      By the way는 <strong>주제 전환용</strong>, 여기선 대조가 필요하므로 <strong>That said</strong>.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">worrying about nothing → without worrying about anything</span>
+      이중부정은 어색. <strong>without + -ing</strong> 구조에 anything을 붙이는 게 자연스러움.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title err">I would do travel → I would travel</span>
+      "do" 불필요.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title up">readily → in a heartbeat</span>
+      문맥상 <strong>in a heartbeat</strong>가 훨씬 자연스러운 표현. "주저 없이, 바로"라는 뉘앙스.
+    </div>
+
+    <div class="reason-item">
+      <span class="reason-title tip">모범 답안 전체 흐름</span>
+      <em>"Honestly, I have mixed feelings about it. When I was younger, I absolutely loved travelling — all I had to do was pack my bags and follow my parents around. But as I got older, I've hardly travelled at all, and I've never actually planned a trip on my own. So I sometimes wonder if that means I don't really enjoy it anymore. That said, if I had enough time and money to travel the world without worrying about anything, I'd do it in a heartbeat."</em>
+    </div>
+  </div>
+</div>
+</body>
+</html>
