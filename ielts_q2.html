@@ -13,19 +13,35 @@
     color: #2B2B28;
     line-height: 1.6;
   }
-  .page-title {
+  .header-bar {
     max-width: 780px;
     margin: 0 auto 1rem;
-    font-size: 20px;
-    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .title-group { flex: 1; }
+  .page-title { font-size: 20px; font-weight: 500; color: #2B2B28; margin-bottom: 0.25rem; }
+  .question { font-size: 14px; color: #6B6A63; }
+  .print-btn {
+    padding: 0.5rem 0.9rem;
+    border: 0.5px solid rgba(0,0,0,0.15);
+    background: #FAF9F5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
     color: #2B2B28;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: background 0.15s;
   }
-  .question {
-    max-width: 780px;
-    margin: 0 auto 1.5rem;
-    font-size: 15px;
-    color: #6B6A63;
-  }
+  .print-btn:hover { background: #F0EEE6; }
+  .btn-group { display: flex; gap: 0.5rem; }
+
   .feedback-card {
     max-width: 780px;
     margin: 0 auto;
@@ -38,14 +54,10 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-bottom: 1rem; padding-bottom: 0.75rem;
     border-bottom: 0.5px solid rgba(0,0,0,0.1);
-    font-size: 13px;
-    color: #6B6A63;
+    font-size: 13px; color: #6B6A63;
   }
   .legend-item { display: flex; align-items: center; gap: 6px; }
   .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
@@ -54,30 +66,22 @@
   .wrong { color: #E24B4A; text-decoration: line-through; text-decoration-color: #E24B4A; font-weight: 500; }
   .better { color: #185FA5; font-weight: 500; background: #E6F1FB; padding: 1px 5px; border-radius: 4px; }
   .full-text {
-    line-height: 2;
-    padding: 1.1rem;
-    background: #FFFFFF;
-    border-radius: 8px;
-    margin-bottom: 1.25rem;
-    font-size: 15px;
+    line-height: 2; padding: 1.1rem;
+    background: #FFFFFF; border-radius: 8px;
+    margin-bottom: 1.25rem; font-size: 15px;
     border: 0.5px solid rgba(0,0,0,0.06);
   }
   .reasons {
-    padding: 1rem 1.1rem;
-    background: #FFFFFF;
-    border-radius: 8px;
+    padding: 1rem 1.1rem; background: #FFFFFF; border-radius: 8px;
     border-left: 3px solid rgba(0,0,0,0.15);
     border-top: 0.5px solid rgba(0,0,0,0.06);
     border-right: 0.5px solid rgba(0,0,0,0.06);
     border-bottom: 0.5px solid rgba(0,0,0,0.06);
   }
   .reason-item {
-    margin-bottom: 0.9rem;
-    padding-bottom: 0.9rem;
+    margin-bottom: 0.9rem; padding-bottom: 0.9rem;
     border-bottom: 0.5px dashed rgba(0,0,0,0.1);
-    font-size: 13.5px;
-    color: #6B6A63;
-    line-height: 1.65;
+    font-size: 13.5px; color: #6B6A63; line-height: 1.65;
   }
   .reason-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
   .reason-item strong { color: #2B2B28; font-weight: 500; }
@@ -87,20 +91,12 @@
   .alt { display: block; margin-top: 0.35rem; font-size: 12.5px; color: #8E8D85; }
   .alt::before { content: "↳ 대안: "; font-weight: 500; }
   .section-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: #6B6A63;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.6rem;
+    font-size: 13px; font-weight: 500; color: #6B6A63;
+    text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem;
   }
   .divider {
-    text-align: center;
-    font-size: 11px;
-    color: #8E8D85;
-    letter-spacing: 0.1em;
-    margin: 1rem 0;
-    padding: 0.5rem 0;
+    text-align: center; font-size: 11px; color: #8E8D85;
+    letter-spacing: 0.1em; margin: 1rem 0; padding: 0.5rem 0;
     border-top: 0.5px dashed rgba(0,0,0,0.15);
     border-bottom: 0.5px dashed rgba(0,0,0,0.15);
     text-transform: uppercase;
@@ -109,7 +105,8 @@
     body { background: #1A1A18; color: #E5E4DF; }
     .page-title, .reason-item strong, .reason-title, .full-text, .feedback-card { color: #E5E4DF; }
     .question, .section-label, .legend, .reason-item, .alt, .divider { color: #9C9A92; }
-    .feedback-card { background: #232320; border-color: rgba(255,255,255,0.08); }
+    .feedback-card, .print-btn { background: #232320; border-color: rgba(255,255,255,0.08); color: #E5E4DF; }
+    .print-btn:hover { background: #2E2E2A; }
     .full-text, .reasons { background: #1A1A18; border-color: rgba(255,255,255,0.08); }
     .reasons { border-left-color: rgba(255,255,255,0.2); }
     .legend, .reason-item { border-color: rgba(255,255,255,0.08); }
@@ -117,11 +114,36 @@
     .better { color: #85B7EB; background: rgba(24,95,165,0.2); }
     .wrong { color: #F09595; text-decoration-color: #F09595; }
   }
+  @media print {
+    @page { margin: 1cm; }
+    body, .feedback-card, .full-text, .reasons {
+      background: white !important;
+      color: #2B2B28 !important;
+    }
+    .page-title, .reason-item strong, .reason-title { color: #2B2B28 !important; }
+    .question, .section-label, .legend, .reason-item, .alt, .divider { color: #6B6A63 !important; }
+    .print-btn { display: none; }
+    .feedback-card { box-shadow: none; border: 0.5px solid #CCC; }
+    .reason-item { break-inside: avoid; }
+    span.wrong, .wrong { color: #C43B3A !important; text-decoration: line-through !important; text-decoration-color: #C43B3A !important; background: transparent !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    span.better, .better { color: #0F4C8A !important; background-color: #E6F1FB !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .checklist { background-color: #E6F5EE !important; color: #0A4D3C !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .dot-red { background-color: #E24B4A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .dot-blue { background-color: #185FA5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 </style>
 </head>
 <body>
-<div class="page-title">Q2. Do you prefer travelling alone or with other people?</div>
-<div class="question">Part 1 — Travel set 1</div>
+<div class="header-bar">
+  <div class="title-group">
+    <div class="page-title">Q2. Do you prefer travelling alone or with other people?</div>
+    <div class="question">Part 1 — Travel set 1</div>
+  </div>
+  <div class="btn-group">
+    <button class="print-btn" onclick="window.print()">🖨️ 인쇄</button>
+    <button class="print-btn pdf-btn" onclick="printAsOnePage()">📄 한 페이지 PDF</button>
+  </div>
+</div>
 
 <div class="feedback-card">
   <div class="legend">
@@ -235,5 +257,35 @@
 
   </div>
 </div>
+<script>
+function printAsOnePage() {
+  var totalHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight
+  );
+  var heightMm = Math.ceil(totalHeight * 25.4 / 96 * 1.5) + 100;
+
+  var style = document.createElement('style');
+  style.id = 'one-page-print';
+  style.innerHTML =
+    '@media print {' +
+      '@page { size: 210mm ' + heightMm + 'mm !important; margin: 1cm !important; }' +
+      'html, body { height: auto !important; overflow: visible !important; }' +
+      '* { page-break-inside: avoid !important; break-inside: avoid !important; }' +
+      '.feedback-card, .full-text, .reasons, .reason-item, .checklist { page-break-inside: avoid !important; break-inside: avoid !important; }' +
+    '}';
+  document.head.appendChild(style);
+
+  setTimeout(function() {
+    window.print();
+    setTimeout(function() {
+      var s = document.getElementById('one-page-print');
+      if (s) s.remove();
+    }, 1000);
+  }, 100);
+}
+</script>
 </body>
 </html>
